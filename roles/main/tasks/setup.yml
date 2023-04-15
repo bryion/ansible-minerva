@@ -1,0 +1,46 @@
+---
+
+#- name: create groups
+#  group: 
+#    name: "{{ item }}"
+#  loop:
+#    - "{{ username }}"
+#    - docker
+
+#- name: create non-root user
+#  user: 
+#    name: "{{ username }}"
+#    password: "{{ password | password_hash('sha512') }}"
+#    groups:
+#      - sudo
+#      - docker 
+#      - users
+#    append: yes
+#    shell: "{{ shell }}"
+    # only on initial user create
+#    update_password: on_create
+
+- name: Passwordless sudo for "{{ username }}"
+  lineinfile:
+    dest: "/etc/sudoers"
+    regexp: "^%wheel"
+    line: "{{ username }} ALL=(ALL) NOPASSWD: ALL"
+    validate: "/usr/sbin/visudo -cf %s"
+
+# TODO: Revisit to pin versions to avoid breaking changes.
+- name: Install System Updates
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install Essential Packages
+  apt:
+    name: "{{ packages }}"
+    state: latest
+
+#- name: clone homeserver repository 
+#  git:
+#    repo: https://github.com/kawadeomkar/homeserver.git
+#    dest: /homeserver
+#    clone: yes
+#    update: yes

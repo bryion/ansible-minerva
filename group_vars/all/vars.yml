@@ -1,0 +1,14 @@
+username: bryan
+shell: /usr/bin/bash
+
+packages:
+  - vim
+  - htop
+  - curl
+  - tmux
+  - neofetch
+  - speedtest-cli
+  - openssh-server
+  - git-all
+  - net-tools
+  - itop
