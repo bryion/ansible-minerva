@@ -10,7 +10,8 @@
       when: ansible_os_family == 'Ubuntu' 
 
   roles:  
-    - role: main
+    - role: initialize
     - role: geerlingguy.docker
+    - role: containers
 
       #testing update
