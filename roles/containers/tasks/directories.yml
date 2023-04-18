@@ -2,7 +2,7 @@
 - name: Import "docker-compose.yml"
   git:
     repo: https://github.com/bryion/docker-minerva.git
-    dest: /home/bryan/repos/
+    dest: /home/{{ username }}/repos/
     clone: yes
     update: yes
 
@@ -15,8 +15,23 @@
     - /opt/hass
     - /opt/portainer
     - /opt/homer
+    - /opt/prometheus
+    - /opt/grafana
+    #uptime kuma
+    #
 
-- name: Transfer Homer's "config.yml"
+# required for homer to grab default config/assets
+- name: Changing Permissions of "/opt/homer" 
+  shell: chown bryan:bryan /opt/homer
+
+#  import homer settings once finilized
+- name: Moving Homer's "config.yml" to "/opt/homer/"
   copy:
     src: home/bryan/repos/homer-config/config.yml
     dest: /opt/homer/
+
+# import prometheus
+- name: Moving Prometheus's "prometheus.yml" to "/etc/prometheus/"
+  copy:
+    src: home/bryan/repos/prometheus-config/prometheus.yml
+    dest: /etc/prometheus/
