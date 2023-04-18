@@ -6,7 +6,6 @@
     clone: yes
     update: yes
 
-
 - name: Create Container Directories
   file:
     path: "{{ item }}"
@@ -16,3 +15,8 @@
     - /opt/hass
     - /opt/portainer
     - /opt/homer
+
+- name: Transfer Homer's "config.yml"
+  copy:
+    src: repos/homer-config/config.yml
+    dest: /opt/homer/
