@@ -1,19 +1,13 @@
 ---
 
-- name: passwordless ssh
+- name: Passwordless SSH
   lineinfile:
     dest: /etc/ssh/sshd_config
     regexp: "^#PasswordAuthentication yes"
     line: "PasswordAuthentication no"
-  register: sshd_config
+  notify: Restart SSH Daemon
 
-- name: restart ssh daemon
-  service:
-    name: sshd
-    state: restarted
-  when: sshd_config.changed
-
-- name: harden ssh
+- name: Harden SSH
   lineinfile:
     dest: "/etc/ssh/sshd_config"
     regexp: "{{ item.regexp }}"

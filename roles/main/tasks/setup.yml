@@ -20,7 +20,7 @@
     # only on initial user create
 #    update_password: on_create
 
-- name: Passwordless sudo for "{{ username }}"
+- name: Passwordless Sudo For "{{ username }}"
   lineinfile:
     dest: "/etc/sudoers"
     regexp: "^%wheel"
@@ -37,6 +37,17 @@
   apt:
     name: "{{ packages }}"
     state: latest
+
+- name: Suppress Login Message (hushlogin)
+  file:
+    path: "/home/{{ username}}/.hushlogin"
+    mode: 0644
+    owner: "{{ username }}"
+    group: "{{ username }}"
+    modification_time: preserve
+    access_time: preserve
+    state: touch
+
 
 #- name: clone homeserver repository 
 #  git:
