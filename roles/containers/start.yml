@@ -1,0 +1,5 @@
+---
+
+- name: Start Containers
+  command: >
+    docker-compose -f /home/bryan/repos/docker-compose.yml up -d

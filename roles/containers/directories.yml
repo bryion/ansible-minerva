@@ -1,8 +1,8 @@
 ---
 - name: Import "docker-compose.yml"
   git:
-    repo: https://github.com/sqlite/sqlite.git
-    dest: /home/debian/repos/
+    repo: https://github.com/bryion/docker-minerva.git
+    dest: /home/bryan/repos/
     clone: yes
     update: yes
 
