@@ -18,5 +18,5 @@
 
 - name: Transfer Homer's "config.yml"
   copy:
-    src: repos/homer-config/config.yml
+    src: home/bryan/repos/homer-config/config.yml
     dest: /opt/homer/
