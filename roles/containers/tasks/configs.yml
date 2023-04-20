@@ -1,0 +1,21 @@
+---
+# import homepage configs
+- name: Moving Homepage's Configurations to "/opt/homepage/"
+  copy:
+    src: "{{ item }}"
+    dest: "/opt/homepage/"
+    remote_src : true
+  loop:
+    - /home/bryan/repos/homepage-config/bookmarks.yaml
+    - /home/bryan/repos/homepage-config/docker.yaml
+    - /home/bryan/repos/homepage-config/kubernetes.yaml
+    - /home/bryan/repos/homepage-config/services.yaml
+    - /home/bryan/repos/homepage-config/settings.yaml
+    - /home/bryan/repos/homepage-config/widgets.yaml
+
+# import prometheus config
+- name: Moving Prometheus's "prometheus.yml" to "/etc/prometheus/"
+  copy:
+    src: "/home/bryan/repos/prometheus-config/prometheus.yml"
+    dest: "/etc/prometheus/"
+    remote_src : true
