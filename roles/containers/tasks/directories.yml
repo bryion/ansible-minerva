@@ -19,6 +19,7 @@
     - /opt/grafana
     - /opt/homepage
     - /opt/uptimekuma
+    - /opt/cadvisor
 
 - name: Changing Permissions of "/opt" 
   shell: chown bryan:bryan /opt
