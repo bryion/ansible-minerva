@@ -1,4 +1,5 @@
 username: bryan
+# nrusername: nonroot
 shell: /usr/bin/bash
 
 packages:

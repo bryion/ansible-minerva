@@ -5,27 +5,31 @@
 #    name: "{{ item }}"
 #  loop:
 #    - "{{ username }}"
+#    - "{{ nrusername }}"
 #    - docker
 
 #- name: create non-root user
 #  user: 
-#    name: "{{ username }}"
+#    name: "{{ nrusername }}"
 #    password: "{{ password | password_hash('sha512') }}"
-#    groups:
+#   groups:
 #      - sudo
 #      - docker 
 #      - users
 #    append: yes
 #    shell: "{{ shell }}"
-    # only on initial user create
+#    # only on initial user create
 #    update_password: on_create
 
-- name: Passwordless Sudo For "{{ username }}"
+- name: Passwordless Sudo For "{{ item }}"
   lineinfile:
     dest: "/etc/sudoers"
     regexp: "^%wheel"
-    line: "{{ username }} ALL=(ALL) NOPASSWD: ALL"
+    line: "{{ item }} ALL=(ALL) NOPASSWD: ALL"
     validate: "/usr/sbin/visudo -cf %s"
+  loop:
+    - "{{ username }}"
+    #  - "{{ nrusername }}"
 
 # TODO: Revisit to pin versions to avoid breaking changes.
 - name: Install System Updates
@@ -40,18 +44,13 @@
 
 - name: Suppress Login Message (hushlogin)
   file:
-    path: "/home/{{ username}}/.hushlogin"
+    path: "/home/{{ item }}/.hushlogin"
     mode: 0644
-    owner: "{{ username }}"
-    group: "{{ username }}"
+    owner: "{{ item }}"
+    group: "{{ item }}"
     modification_time: preserve
     access_time: preserve
     state: touch
-
-
-#- name: clone homeserver repository 
-#  git:
-#    repo: https://github.com/kawadeomkar/homeserver.git
-#    dest: /homeserver
-#    clone: yes
-#    update: yes
+  loop:
+    # - "{{ nrusername }}"
+    - "{{ username }}"

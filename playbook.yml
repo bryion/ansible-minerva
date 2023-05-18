@@ -12,5 +12,5 @@
   roles:  
     - role: initialize
     - role: geerlingguy.docker
-    - role: minikube
-    # - role: containerssh
+    # - role: minikube
+    - role: containers
