@@ -1,2 +1,2 @@
 [homeserver]
-Minvera ansible_host=192.168.1.19 ansible_user=bryan ansible_connection=ssh ansible_ssh_private_key_file=/home/bryan/.ssh/minerva
+minvera ansible_host=192.168.1.19 ansible_user=bryan ansible_connection=ssh ansible_ssh_private_key_file=/home/bryan/.ssh/minerva

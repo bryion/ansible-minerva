@@ -1,5 +1,17 @@
 ---
 
-- name: Start Containers
+- name: Start dc-main
   command: >
-    docker-compose -f /home/bryan/repos/docker-compose.yml up -d
+    docker-compose -f /home/bryan/repos/docker-compose/dc-main/docker-compose.yml up -d
+  
+- name: Start dc-monitor
+  command: >
+    docker-compose -f /home/bryan/repos/docker-compose/dc-monitor/docker-compose.yml up -d
+
+- name: Start dc-network
+  command: >
+    docker-compose -f /home/bryan/repos/docker-compose/dc-network/docker-compose.yml up -d
+
+- name: Start dc-ptero
+  command: >
+    docker-compose -f /home/bryan/repos/docker-compose/dc-ptero/docker-compose.yml up -d

@@ -15,6 +15,10 @@ packages:
   - git-all
   - net-tools
   - itop
+  - apt-transport-https
+  - ca-certificates
+  - gnupg2
+  - software-properties-common
 
 # TODO: networking
 # lan_subnet: 10.0.0.0/24

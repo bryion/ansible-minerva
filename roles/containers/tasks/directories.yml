@@ -20,6 +20,14 @@
     - /opt/homepage
     - /opt/uptimekuma
     - /opt/cadvisor
+    - /opt/nginx/data
+    - /opt/nginx/letsencrypt
+    - /opt/nextcloud/appdata
+    - /opt/nextcloud/data
+    - /opt/jellyfin/config
+    - /opt/jellyfin/tvshows
+    - /opt/jellyfin/movies
 
 - name: Changing Permissions of "/opt" 
   shell: chown bryan:bryan /opt
+
