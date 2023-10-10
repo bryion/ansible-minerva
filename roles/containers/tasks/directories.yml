@@ -6,6 +6,13 @@
     clone: yes
     update: yes
 
+- name: Import "discord-music-bot" Repository
+  git:
+    repo: https://github.com/kawadeomkar/discord-music-bot.git
+    dest: /home/{{ username }}/repo-kawade/discord-music-bot/
+    clone: yes
+    update: yes
+
 - name: Create Container Directories
   file:
     mode: 0777

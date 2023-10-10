@@ -1,56 +1,17 @@
 ---
-# dc-main
-- name: Stop dc-main
-  command: >
-    docker-compose -f /home/bryan/repos/docker-compose/dc-main/docker-compose.yml stop
-- name : Remove dc-main images
-  command: >
-    docker-compose rm -f /home/bryan/repos/docker-compose/dc-main/docker-compose.yml
-- name: Pull dc-main images
-  command: >
-    docker-compose -f /home/bryan/repos/docker-compose/dc-main/docker-compose.yml pull
+
 - name: Start dc-main
   command: >
     docker-compose -f /home/bryan/repos/docker-compose/dc-main/docker-compose.yml up -d
-
-#dc-monitor
-- name: Stop dc-monitor
-  command: >
-    docker-compose -f /home/bryan/repos/docker-compose/dc-monitor/docker-compose.yml stop
-- name : Remove dc-monitor images
-  command: >
-    docker-compose rm -f /home/bryan/repos/docker-compose/dc-monitor/docker-compose.yml
-- name: Pull dc-monitor images
-  command: >
-    docker-compose -f /home/bryan/repos/docker-compose/dc-monitor/docker-compose.yml pull
+  
 - name: Start dc-monitor
   command: >
     docker-compose -f /home/bryan/repos/docker-compose/dc-monitor/docker-compose.yml up -d
 
-#dc-monitor
-- name: Stop dc-network
-  command: >
-    docker-compose -f /home/bryan/repos/docker-compose/dc-network/docker-compose.yml stop
-- name : Remove dc-network images
-  command: >
-    docker-compose rm -f /home/bryan/repos/docker-compose/dc-network/docker-compose.yml
-- name: Pull dc-network images
-  command: >
-    docker-compose -f /home/bryan/repos/docker-compose/dc-network/docker-compose.yml pull
 - name: Start dc-network
   command: >
     docker-compose -f /home/bryan/repos/docker-compose/dc-network/docker-compose.yml up -d
 
-#dc-ptero
-- name: Stop dc-ptero
-  command: >
-    docker-compose -f /home/bryan/repos/docker-compose/dc-ptero/docker-compose.yml stop
-- name : Remove dc-ptero images
-  command: >
-    docker-compose rm -f /home/bryan/repos/docker-compose/dc-ptero/docker-compose.yml
-- name: Pull dc-ptero images
-  command: >
-    docker-compose -f /home/bryan/repos/docker-compose/dc-ptero/docker-compose.yml pull
 - name: Start dc-ptero
   command: >
     docker-compose -f /home/bryan/repos/docker-compose/dc-ptero/docker-compose.yml up -d
