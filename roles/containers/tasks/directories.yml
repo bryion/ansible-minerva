@@ -29,7 +29,7 @@
     - /opt/cadvisor
     - /opt/nginx/data
     - /opt/nginx/letsencrypt
-    - /media/drive2/torrents
+    # drive2
     - /media/drive2/nextcloud/appdata
     - /media/drive2/nextcloud/data
     - /media/drive2/jellyfin/config
@@ -37,7 +37,20 @@
     - /media/drive2/prowlarr/config
     - /media/drive2/radarr/config
     - /media/drive2/sabnzbd/config
-    - /media/drive2/sabnzbd/incomplete
+    # trashguides reference for file system
+    - /media/drive2/data #for *arr, usenet, and torrents
+    - /media/drive2/data/torrents #obsolete until qbittorent
+    - /media/drive2/data/torrents/movies #obsolete until qbittorent
+    - /media/drive2/data/torrents/tv #obsolete until qbittorent
+    - /media/drive2/data/usenet
+    - /media/drive2/data/usenet/incomplete
+    - /media/drive2/data/usenet/complete
+    - /media/drive2/data/usenet/complete/movies
+    - /media/drive2/data/usenet/complete/tv
+    - /media/drive2/data/media
+    - /media/drive2/data/media/tv
+    - /media/drive2/data/media/movies
+
     #- /opt/adguardhome/conf
     #- /opt/adguardhome/work
     - /opt/pihole/etc-pihole
