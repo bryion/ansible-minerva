@@ -29,6 +29,7 @@
     - /opt/cadvisor
     - /opt/nginx/data
     - /opt/nginx/letsencrypt
+    - /opt/filebrowser
     # drive2
     - /media/drive2/nextcloud/appdata
     - /media/drive2/nextcloud/data
