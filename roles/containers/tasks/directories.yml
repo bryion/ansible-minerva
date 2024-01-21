@@ -30,6 +30,7 @@
     - /opt/nginx/data
     - /opt/nginx/letsencrypt
     - /opt/filebrowser
+    - /opt/actualbudget
     # drive2
     - /media/drive2/nextcloud/appdata
     - /media/drive2/nextcloud/data
