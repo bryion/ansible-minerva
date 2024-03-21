@@ -31,7 +31,6 @@
     - /opt/nginx/letsencrypt
     - /opt/filebrowser
     - /opt/actualbudget
-    - /opt/palworld
     # drive2
     - /media/drive2/nextcloud/appdata
     - /media/drive2/nextcloud/data
