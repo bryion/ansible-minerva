@@ -31,6 +31,8 @@
     - /opt/nginx/letsencrypt
     - /opt/filebrowser
     - /opt/actualbudget
+    - /opt/speedtest-tracker/config
+    
     # drive2
     - /media/drive2/nextcloud/appdata
     - /media/drive2/nextcloud/data
