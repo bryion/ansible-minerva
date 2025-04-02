@@ -32,7 +32,9 @@
     - /opt/filebrowser
     - /opt/actualbudget
     - /opt/speedtest-tracker/config
-    
+    - /opt/minecraft/data
+    - /opt/minecraft/data/minecraft-config
+
     # drive2
     - /media/drive2/nextcloud/appdata
     - /media/drive2/nextcloud/data

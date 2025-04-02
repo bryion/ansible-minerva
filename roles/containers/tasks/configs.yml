@@ -28,3 +28,12 @@
     src: "/home/bryan/repos/prometheus-config/prometheus.yml"
     dest: "/etc/prometheus/"
     remote_src : true
+
+#import minecraft config
+- name: Moving Minecraft's Configurations to "/opt/minecraft/data/minecraft-config/"
+  copy:
+    src: "{{ item }}"
+    dest: "/opt/minecraft/data/minecraft-config/"
+    remote_src : true
+  loop:
+    - /home/bryan/repos/minecraft-config/icon_minerva_64.png
