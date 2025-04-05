@@ -12,6 +12,10 @@
   command: >
     docker-compose -f /home/bryan/repos/docker-compose/dc-network/docker-compose.yml up -d
 
+- name: Start dc-minecraft (only rcon)
+  command: >
+    docker-compose -f /home/bryan/repos/docker-compose/dc-minecraft/docker-compose.yml up -d
+
 #- name: Start dc-ptero
 #  command: >
 #    docker-compose -f /home/bryan/repos/docker-compose/dc-ptero/docker-compose.yml up -d
