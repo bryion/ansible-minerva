@@ -12,7 +12,7 @@
   command: >
     docker-compose -f /home/bryan/repos/docker-compose/dc-network/docker-compose.yml up -d
 
-- name: Start dc-minecraft (only rcon)
+- name: Start dc-minecraft (all except profile:server)
   command: >
     docker-compose -f /home/bryan/repos/docker-compose/dc-minecraft/docker-compose.yml up -d
 
