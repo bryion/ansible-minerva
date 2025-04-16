@@ -4,7 +4,7 @@
   command: >
     docker-compose -f /home/bryan/repos/docker-compose/dc-main/docker-compose.yml up -d
   
-- name: Start dc-monitor
+- name: Start dc-monitor (all except mc-server)
   command: >
     docker-compose -f /home/bryan/repos/docker-compose/dc-monitor/docker-compose.yml up -d
 
@@ -12,9 +12,9 @@
   command: >
     docker-compose -f /home/bryan/repos/docker-compose/dc-network/docker-compose.yml up -d
 
-- name: Start dc-minecraft (all except mc-server)
-  command: >
-    docker-compose -f /home/bryan/repos/docker-compose/dc-minecraft/docker-compose.yml up -d
+#- name: Start dc-minecraft (all except mc-server)
+#  command: >
+#    docker-compose -f /home/bryan/repos/docker-compose/dc-minecraft/docker-compose.yml up -d
 
 #- name: Start dc-ptero
 #  command: >
